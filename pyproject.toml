@@ -1,0 +1,31 @@
+[project]
+name = "rustipy"
+version = "0.1.0"
+description = "A simple and lightweight crate hosting server."
+readme = "README_en.md"
+requires-python = ">=3.12"
+dependencies = [
+    "aiofiles>=24.1.0",
+    "fastapi>=0.115.12",
+    "pydantic-settings>=2.10.0",
+    "python-multipart>=0.0.20",
+    "uvicorn[standard]>=0.34.3",
+    "watchdog>=6.0.0",
+    "websockets>=15.0.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "httpx>=0.28.1",
+    "pytest>=8.4.0",
+    "pytest-asyncio>=1.0.0",
+    "ruff>=0.12.0",
+    "rustipy",
+]
+
+[tool.uv.sources]
+rustipy = { workspace = true }
